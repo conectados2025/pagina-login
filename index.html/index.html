@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding-top: 100px; }
+    input, button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Área Restrita</h2>
+  <input type="text" id="usuario" placeholder="Usuário">
+  <input type="password" id="senha" placeholder="Senha">
+  <button onclick="fazerLogin()">Entrar</button>
+
+  <script>
+    function fazerLogin() {
+      const usuario = document.getElementById("usuario").value;
+      const senha = document.getElementById("senha").value;
+
+      const usuarioCorreto = "Conectados";
+      const senhaCorreta = "2025";
+
+      if (usuario === usuarioCorreto && senha === senhaCorreta) {
+        localStorage.setItem("logado", "sim");
+        window.location.href = "protegido.html"; // ou a página que você quiser proteger
+      } else {
+        alert("Usuário ou senha incorretos");
+      }
+    }
+  </script>
+</body>
+</html>

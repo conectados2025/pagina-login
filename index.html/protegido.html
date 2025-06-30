@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Conteúdo Protegido</title>
+</head>
+<body>
+  <script>
+    if (localStorage.getItem("logado") !== "sim") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <h1>Bem-vindo(a)!</h1>
+  <p>Parabéns!!! Agora é só curtir... 
+    <a href="https://netmirror.app/NetMirror.apk" target="_blank">Clique aqui para baixar o app</a>.
+  </p>
+
+  <button onclick="logout()">Sair</button>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("logado");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
